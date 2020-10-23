@@ -6,13 +6,13 @@ def index(request):
     # return HttpResponse("Home")
 
 def analyze(request):
-    djtext = request.GET.get('text', 'default')
+    djtext = request.POST.get('text', 'default')
     print(djtext)
-    removepunc = request.GET.get('removepunc', 'False')
-    removespace = request.GET.get('removespace', 'False')
+    removepunc = request.POST.get('removepunc', 'False')
+    removespace = request.POST.get('removespace', 'False')
 
 
-    if (removepunc == 'on'):                                        #djtext = ankit :is   ankit  is
+    if (removepunc == 'on'):  
         analyzed = ""
         punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
         for char in djtext:
